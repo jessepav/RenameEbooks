@@ -1,0 +1,1 @@
+java -cp build com.humidmail.utils.ebooks.RenameEbooks %1

@@ -1,0 +1,3 @@
+@echo off
+echo Creating RenameEbooks.jar ...
+jar cf RenameEbooks.jar -C build com
