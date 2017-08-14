@@ -38,6 +38,17 @@ public class RenameEbooks
 		print("Leaving \"%s\" unchanged\n", f.getName());
 	    }
 	}
+	
+	final Pattern deletePattern = Pattern.compile("(?i)\\.(?:jpg|opf)$");
+	File[] extraneousFiles = dir.listFiles(new FilenameFilter() {
+	    public boolean accept(File dir, String name) {
+		return deletePattern.matcher(name).find();
+	    }});
+	if (extraneousFiles != null && extraneousFiles.length > 0) {
+	    print("\nDeleting %d extraneous files...\n", extraneousFiles.length);
+	    for (File f : extraneousFiles)
+	    	f.delete();
+	}
 	System.exit(0);
     }
 
