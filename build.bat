@@ -1,1 +1,1 @@
-javac -d build RenameEbooks.java
+javac -d build src\RenameEbooks.java
